@@ -1,9 +1,6 @@
 import numpy as np
 from model.transforecaster import Transforecaster
 
-import tensorflow as tf
-print(tf.__version__)
-
 # Create dummy data
 encoder_inputs = np.random.randn(10, 512, 12)
 decoder_inputs = np.random.randn(10, 24, 1)
@@ -31,5 +28,5 @@ transforecaster = Transforecaster(
 )
 
 # Run a forward pass
-# output = transforecaster((encoder_inputs, decoder_inputs), training = False)
-# print(output.shape) # Must equal decoder_outputs.shape
+output = transforecaster((encoder_inputs, decoder_inputs), training = False)
+print(output.shape) # Must equal decoder_outputs.shape
